@@ -6,16 +6,19 @@ import MainNav from './components/navbar/navbar';
 import ProductList from './components/productList/productList';
 import Details from './components/details/details';
 import Cart from './components/cart/cart';
+import ProductContext from './components/Context';
 
 function App() {
   return (
     <React.Fragment>
       <MainNav />
-      <Switch>
-        <Route exact path='/' component={ProductList} />
-        <Route path='/details' component={Details} />
-        <Route path='/cart' component={Details} />
-      </Switch>
+      <ProductContext.Provider value='hello from context'>
+        <Switch>
+          <Route exact path='/' component={ProductList} />
+          <Route path='/details' component={Details} />
+          <Route path='/cart' component={Cart} />
+        </Switch>
+      </ProductContext.Provider>
     </React.Fragment>
   );
 }
