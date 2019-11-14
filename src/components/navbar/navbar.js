@@ -4,6 +4,8 @@ import Logo from '../../media/Logo.png';
 import './Navbar.css';
 import { Navbar, Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import { FaShoppingCart } from 'react-icons/fa';
+
 
 function MainNav() {
     return (
@@ -16,8 +18,8 @@ function MainNav() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
-                    <LinkContainer to='/details'>
-                        <Nav.Link >Cart</Nav.Link>
+                    <LinkContainer to='/cart'>
+                        <Nav.Link > <FaShoppingCart />  Cart</Nav.Link>
                     </LinkContainer>
                 </Nav>
             </Navbar.Collapse>
