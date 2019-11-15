@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Product({ product }) {
+function Product({ product, addToCart }) {
     console.log(product);
 
     return (
         <React.Fragment>
-            <div className='col-12 col-md-6'>
+            <div className='col-12 col-md-6 my-3'>
                 <div className="card" >
                     <img src={product.image} className="card-img-top" alt="..." />
                     <div className="card-body">

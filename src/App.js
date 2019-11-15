@@ -14,9 +14,8 @@ function App() {
   let [products, setProducts] = useState(ProductStock);
   let [detail, setdetailProduct] = useState(detailProduct);
 
-  const addToCart = () => {
+  const addToCart = (id) => {
     console.log('added to cart');
-
   }
   return (
     <React.Fragment>
@@ -24,7 +23,7 @@ function App() {
       <ProductContext.Provider value={{
         products,
         detailProduct,
-        addToCart
+        addToCart,
       }}>
         <Switch>
           <Route exact path='/' component={ProductList} />

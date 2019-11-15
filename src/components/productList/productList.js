@@ -5,14 +5,14 @@ import Product from '../product/product';
 function ProductList() {
 
     const data = useContext(ProductContext);
-    const { products } = data;
+    const { products, addToCart } = data;
     return (
         <React.Fragment>
             <div className="py-5">
                 <div className="container">
                     <div className="row">
-                        {products.map(x => {
-                            return <Product />
+                        {products.map(product => {
+                            return <Product key={product.id} product={product} addToCart={addToCart} />
                         })}
                     </div>
                 </div>
