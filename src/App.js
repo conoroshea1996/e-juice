@@ -13,6 +13,16 @@ import { ProductStock, detailProduct } from './data';
 function App() {
   let [products, setProducts] = useState(ProductStock);
   let [detail, setdetailProduct] = useState(detailProduct);
+  // get item by id
+  const getItem = (id) => {
+    const item = products.find(item => item.id === id);
+    return item
+  }
+  const handleDetailItem = (id) => {
+    const product = getItem(id);
+    setdetailProduct(product);
+  }
+  console.log(detail);
 
   const addToCart = (id) => {
     console.log('added to cart');
@@ -22,8 +32,9 @@ function App() {
       <MainNav />
       <ProductContext.Provider value={{
         products,
-        detailProduct,
+        detail,
         addToCart,
+        handleDetailItem
       }}>
         <Switch>
           <Route exact path='/' component={ProductList} />
