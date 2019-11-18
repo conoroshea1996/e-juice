@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import ProductContext from '../Context';
+import { Card } from 'react-bootstrap';
 
 function Cart() {
+    const { cartItems } = useContext(ProductContext);
+    console.log(cartItems);
     return (
         <React.Fragment>
-            <h3>Hello from Cart</h3>
+            {cartItems.map(item => {
+                return (<Card className='m-1' >
+                    <Card.Body>
+                        <Card.Img variant='top' height={300} src={item.img} alt={item.title} />
+                        <Card.Title>{item.title}</Card.Title>
+                        {/* <Card.Text>
+                            {info}
+                        </Card.Text> */}
+                        <Card.Footer className='d-flex justify-content-around'>
+                            <Card.Text>
+                                ${item.price}
+                            </Card.Text>
+                            <Card.Text>
+                                {item.inCart ? 'add to cart' : 'already in cart'}
+                            </Card.Text>
+                        </Card.Footer>
+                    </Card.Body>
+                </Card>)
+            })}
+
         </React.Fragment>
     );
 }

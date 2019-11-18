@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaCartPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import { Card } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap';
 
 function Product({ product, addToCart, getItem }) {
     const { img, title, info, price, inCart, id } = product;
@@ -24,6 +24,9 @@ function Product({ product, addToCart, getItem }) {
                             <Card.Text>
                                 {inCart ? 'add to cart' : 'already in cart'}
                             </Card.Text>
+                            <Button onClick={() => addToCart(id)}>
+                                add to cart
+                            </Button>
                         </Card.Footer>
                     </Card.Body>
                 </Card>

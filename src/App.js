@@ -13,7 +13,9 @@ import { ProductStock, detailProduct } from './data';
 function App() {
   let [products, setProducts] = useState(ProductStock);
   let [detail, setdetailProduct] = useState(detailProduct);
-  // get item by id
+  let [cartItems, setCartItems] = useState([]);
+
+  // get item by id in products
   const getItem = (id) => {
     const item = products.find(item => item.id === id);
     return item
@@ -22,11 +24,13 @@ function App() {
     const product = getItem(id);
     setdetailProduct(product);
   }
-  console.log(detail);
 
   const addToCart = (id) => {
     console.log('added to cart');
+    const item = getItem(id);
+    setCartItems([...cartItems, item]);
   }
+
   return (
     <React.Fragment>
       <MainNav />
@@ -34,7 +38,8 @@ function App() {
         products,
         detail,
         addToCart,
-        handleDetailItem
+        handleDetailItem,
+        cartItems
       }}>
         <Switch>
           <Route exact path='/' component={ProductList} />
