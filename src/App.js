@@ -33,7 +33,6 @@ function App() {
 
   return (
     <React.Fragment>
-      <MainNav />
       <ProductContext.Provider value={{
         products,
         detail,
@@ -41,6 +40,7 @@ function App() {
         handleDetailItem,
         cartItems
       }}>
+        <MainNav />
         <Switch>
           <Route exact path='/' component={ProductList} />
           <Route path='/details' component={Details} />
