@@ -7,7 +7,7 @@ function Product({ product, addToCart, getItem }) {
     const { img, title, info, price, inCart, id } = product;
     return (
         <React.Fragment>
-            <div className='col-12 col-md-6 '>
+            <div className='col-12 col-md-6 col-xl-4'>
                 <Card className='m-1' >
                     <Card.Body>
                         <Link to='/details' onClick={() => getItem(id)}>
@@ -21,11 +21,8 @@ function Product({ product, addToCart, getItem }) {
                             <Card.Text>
                                 ${price}
                             </Card.Text>
-                            <Card.Text>
-                                {inCart ? 'add to cart' : 'already in cart'}
-                            </Card.Text>
-                            <Button onClick={() => addToCart(id)}>
-                                add to cart
+                            <Button disabled={inCart ? true : false} onClick={() => addToCart(id)}>
+                                {inCart ? 'In Cart' : 'Add to Cart'}
                             </Button>
                         </Card.Footer>
                     </Card.Body>

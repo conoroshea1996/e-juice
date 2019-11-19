@@ -28,9 +28,11 @@ function App() {
   const addToCart = (id) => {
     console.log('added to cart');
     const item = getItem(id);
+    item.inCart = true;
     setCartItems([...cartItems, item]);
   }
 
+  console.log(cartItems);
   return (
     <React.Fragment>
       <ProductContext.Provider value={{
