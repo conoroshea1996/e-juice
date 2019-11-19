@@ -14,8 +14,8 @@ export const ProductStock = [
     },
     {
         id: 2,
-        title: "Samsung S7",
-        img: "img/product-2.png",
+        title: "Vape 2000",
+        img: "imgs/vape1.jpg",
         price: 16,
         company: "SAMSUNG",
         info:
@@ -26,8 +26,8 @@ export const ProductStock = [
     },
     {
         id: 3,
-        title: "HTC 10 - Black",
-        img: "img/product-3.png",
+        title: "Vape 2",
+        img: "imgs/vape1.jpg",
         price: 8,
         company: "htc",
         info:
@@ -38,8 +38,8 @@ export const ProductStock = [
     },
     {
         id: 4,
-        title: "HTC 10 - White",
-        img: "img/product-4.png",
+        title: "Vape 2",
+        img: "imgs/vape1.jpg",
         price: 18,
         company: "htc",
         info:
@@ -50,8 +50,8 @@ export const ProductStock = [
     },
     {
         id: 5,
-        title: "HTC Desire 626s",
-        img: "img/product-5.png",
+        title: "Vape 2",
+        img: "imgs/vape1.jpg",
         price: 24,
         company: "htc",
         info:
@@ -62,8 +62,8 @@ export const ProductStock = [
     },
     {
         id: 6,
-        title: "Vintage Iphone",
-        img: "img/product-6.png",
+        title: "Vape 2",
+        img: "imgs/vape1.jpg",
         price: 17,
         company: "apple",
         info:
@@ -74,8 +74,8 @@ export const ProductStock = [
     },
     {
         id: 7,
-        title: "Iphone 7",
-        img: "img/product-7.png",
+        title: "Vape 2",
+        img: "imgs/vape1.jpg",
         price: 30,
         company: "apple",
         info:
@@ -86,8 +86,8 @@ export const ProductStock = [
     },
     {
         id: 8,
-        title: "Smashed Iphone",
-        img: "img/product-8.png",
+        title: "Vape 2",
+        img: "imgs/vape1.jpg",
         price: 2,
         company: "apple",
         info:
