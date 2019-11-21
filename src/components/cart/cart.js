@@ -3,7 +3,7 @@ import ProductContext from '../Context';
 import { Card } from 'react-bootstrap';
 
 function Cart() {
-    const { cartItems } = useContext(ProductContext);
+    const { cartItems, removeFromCart } = useContext(ProductContext);
     console.log(cartItems);
     return (
         <React.Fragment>
@@ -21,6 +21,7 @@ function Cart() {
                             </Card.Text>
                             <Card.Text>
                                 {item.inCart ? 'add to cart' : 'already in cart'}
+                                <button onClick={() => removeFromCart(item.id)} >Remove From Cart</button>
                             </Card.Text>
                         </Card.Footer>
                     </Card.Body>

@@ -9,7 +9,6 @@ import Cart from './components/cart/cart';
 import ProductContext from './components/Context';
 import { ProductStock, detailProduct } from './data';
 
-
 function App() {
   let [products, setProducts] = useState(ProductStock);
   let [detail, setdetailProduct] = useState(detailProduct);
@@ -26,13 +25,16 @@ function App() {
   }
 
   const addToCart = (id) => {
-    console.log('added to cart');
     const item = getItem(id);
     item.inCart = true;
     setCartItems([...cartItems, item]);
   }
-
-  console.log(cartItems);
+  const removeFromCart = (id) => {
+    const product = getItem(id);
+    product.inCart = false;
+    const item = cartItems.filter(item => item.id !== id);
+    setCartItems(item)
+  }
   return (
     <React.Fragment>
       <ProductContext.Provider value={{
@@ -40,7 +42,8 @@ function App() {
         detail,
         addToCart,
         handleDetailItem,
-        cartItems
+        cartItems,
+        removeFromCart
       }}>
         <MainNav />
         <Switch>
